@@ -10,7 +10,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/cloudfoundry-incubator/guardian/guardiancmd"
+	"code.cloudfoundry.org/guardian/guardiancmd"
 	"github.com/concourse/atc"
 	"github.com/concourse/baggageclaim/baggageclaimcmd"
 	"github.com/concourse/baggageclaim/fs"
