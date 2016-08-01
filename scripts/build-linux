@@ -31,7 +31,6 @@ pushd garden-runc-release/
 
     go install code.cloudfoundry.org/guardian/cmd/dadoo
     go install code.cloudfoundry.org/guardian/cmd/init
-    go install code.cloudfoundry.org/guardian/cmd/kawasaki
     go install code.cloudfoundry.org/guardian/rundmc/iodaemon/cmd/iodaemon
 
     pushd src/github.com/opencontainers/runc
@@ -48,7 +47,7 @@ pushd garden-runc-release/
       mv nstar $LINUX_ASSETS/bin
     popd
 
-    cp bin/{iodaemon,kawasaki,init,dadoo} $LINUX_ASSETS/bin
+    cp bin/{iodaemon,init,dadoo} $LINUX_ASSETS/bin
   )
 popd
 
