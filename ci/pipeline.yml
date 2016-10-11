@@ -3,7 +3,7 @@ resources:
 - name: concourse
   type: git
   source:
-    uri: https://github.com/concourse/concourse
+    uri: https://github.com/holstvoogd/concourse
     branch: develop
 
 - name: garden-runc-release
@@ -15,8 +15,8 @@ resources:
 - name: bin
   type: git
   source:
-    uri: https://github.com/concourse/bin
-    branch: master
+    uri: https://github.com/holstvoogd/concourse-bin
+    branch: develop
 
 - name: houdini
   type: git
@@ -35,8 +35,8 @@ resources:
 - name: bin-releases
   type: github-release
   source:
-    user: vito
-    repository: bin
+    user: holstvoogd
+    repository: concourse-bin
     access_token: {{release-token}}
 
 jobs:
@@ -65,12 +65,6 @@ jobs:
     - task: build-linux
       file: bin/ci/build-linux.yml
       output_mapping: {binary: linux-binary}
-    - task: build-darwin
-      file: bin/ci/build-darwin.yml
-      output_mapping: {binary: darwin-binary}
-    - task: build-windows
-      file: bin/ci/build-windows.yml
-      output_mapping: {binary: windows-binary}
   - task: build-release
     file: bin/ci/build-release.yml
     input_mapping: {version: final-version}
